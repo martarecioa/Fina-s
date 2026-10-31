@@ -143,14 +143,20 @@ h2 .script{font-size:1.15em;line-height:.7}
 .match .btn-ghost{color:var(--ink)}
 
 /* Reseñas */
-.reviews{padding:clamp(80px,12vw,140px) 0}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px}
-.card{background:#fff;border:2.5px solid var(--ink);border-radius:var(--r);padding:28px;box-shadow:7px 7px 0 var(--ink);transition:transform .25s}
-.card:nth-child(1){transform:rotate(-1.5deg)}.card:nth-child(2){transform:rotate(1deg) translateY(10px)}.card:nth-child(3){transform:rotate(-.5deg)}
-.card:hover{transform:rotate(0) translateY(-6px)}
+/* Reseñas: tickets de cocina */
+.reviews{background:var(--ink);color:var(--cream);padding:clamp(80px,12vw,140px) 0}
+.reviews .note.dark{color:var(--cream);margin-top:clamp(22px,4vh,36px)}
+.tickets{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
+.ticket{background:#FFF8EA;color:var(--ink);padding:26px 26px 34px;
+  -webkit-mask:radial-gradient(circle 9px at 9px 100%,#0000 98%,#000) bottom/18px 51% repeat-x,linear-gradient(#000 0 0) top/100% 51% no-repeat;
+  mask:radial-gradient(circle 9px at 9px 100%,#0000 98%,#000) bottom/18px 51% repeat-x,linear-gradient(#000 0 0) top/100% 51% no-repeat;transition:transform .25s}
+.ticket h4{font:400 1.5rem var(--display);text-transform:uppercase;text-align:center;letter-spacing:.06em}
+.ticket .stars{text-align:center;font-size:1.1rem}
+.ticket hr{border:0;border-top:2px dashed rgba(23,23,24,.35);margin:14px 0}
+.ticket p{font-weight:500;font-size:1.05rem;margin:12px 0}
+.ticket .total{display:flex;justify-content:space-between;font:400 1.3rem var(--display);text-transform:uppercase}
+.ticket .total span:last-child{color:var(--orange)}
 .stars{color:var(--orange);letter-spacing:.2em;font-size:1.2rem}
-.card p{margin:14px 0;font-size:1.05rem;font-weight:500}
-.card cite{font-size:.88rem;opacity:.65}
 
 /* Dónde */
 .where{background:var(--ink);color:var(--cream);padding:clamp(80px,11vw,130px) 0}
@@ -174,9 +180,9 @@ address{font-style:normal;font-size:1.2rem;margin:24px 0}
 /* Reveal */
 .reveal{opacity:0;transform:translateY(34px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
 .reveal.in{opacity:1;transform:none}
-.card.reveal.in:nth-child(1){transform:rotate(-1.5deg)}
-.card.reveal.in:nth-child(2){transform:rotate(1deg) translateY(10px)}
-.card.reveal.in:nth-child(3){transform:rotate(-.5deg)}
+.ticket.reveal.in:nth-child(1){transform:rotate(-1.5deg)}
+.ticket.reveal.in:nth-child(2){transform:rotate(1deg) translateY(14px)}
+.ticket.reveal.in:nth-child(3){transform:rotate(-.6deg)}
 
 /* Escritorio: cada sección completa dentro de la pantalla */
 @media (min-width:861px){
@@ -195,8 +201,10 @@ address{font-style:normal;font-size:1.2rem;margin:24px 0}
   .menu-foot{margin-top:clamp(10px,2vh,36px)}
   .feature-art{max-width:min(480px,56vh)}
   h2.big{font-size:clamp(4rem,min(12vw,20vh),9rem)}
-  .cards{margin-top:clamp(20px,4.5vh,50px)}
-  .card{padding:clamp(18px,3vh,28px)}
+  .tickets{margin-top:clamp(20px,4.5vh,48px)}
+  .ticket{padding:clamp(16px,2.6vh,26px) 26px clamp(22px,3.4vh,34px)}
+  .ticket p{font-size:clamp(.95rem,2.2vh,1.05rem);margin-block:clamp(6px,1.4vh,12px)}
+  .ticket hr{margin-block:clamp(8px,1.6vh,14px)}
   .reviews .btn{margin-top:clamp(14px,3vh,28px)!important}
   address{margin:clamp(12px,2.4vh,24px) 0}
   .hours li{padding-block:clamp(7px,1.4vh,11px)}
@@ -205,7 +213,7 @@ address{font-style:normal;font-size:1.2rem;margin:24px 0}
   .final h2{font-size:clamp(4rem,min(16vw,24vh),12rem)}
 }
 @media (max-width:860px){
-  .grid-2,.match-in,.cards{grid-template-columns:1fr}
+  .grid-2,.match-in,.tickets{grid-template-columns:1fr}
   .stats{grid-template-columns:repeat(2,1fr)}
   .burger-btn{display:block}
   .nav .btn-sm{display:none}
@@ -215,8 +223,7 @@ address{font-style:normal;font-size:1.2rem;margin:24px 0}
   .dish div{max-width:62%}
   .hero{padding-top:100px}
   .fab{display:grid;place-items:center;position:fixed;right:18px;bottom:18px;z-index:60;width:60px;height:60px;border-radius:50%;background:var(--orange);color:#fff;box-shadow:4px 4px 0 var(--ink);animation:pulse 2s infinite}
-  .card:nth-child(n){transform:none}
-  .card.reveal.in:nth-child(n){transform:none}
+  .ticket.reveal.in:nth-child(n){transform:none}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
