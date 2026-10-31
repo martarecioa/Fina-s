@@ -173,6 +173,32 @@ address{font-style:normal;font-size:1.2rem;margin:24px 0}
 .card.reveal.in:nth-child(2){transform:rotate(1deg) translateY(10px)}
 .card.reveal.in:nth-child(3){transform:rotate(-.5deg)}
 
+/* Escritorio: cada sección completa dentro de la pantalla */
+@media (min-width:861px){
+  .story,.menu,.feature,.reviews,.where{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-block:clamp(44px,8vh,110px)}
+  .story{padding-top:clamp(64px,11vh,130px)}
+  .story .stats{margin-top:clamp(24px,5vh,80px);padding-top:clamp(14px,3vh,30px)}
+  .story-body p{font-size:clamp(1rem,2.2vh,1.12rem);margin-bottom:clamp(8px,1.6vh,16px)}
+  h2{font-size:clamp(2.4rem,min(6vw,9vh),4.6rem)}
+  .tabs{margin:clamp(16px,3.5vh,40px) 0 clamp(12px,3vh,34px)}
+  .dish h3{font-size:clamp(1.3rem,3vh,1.7rem)}
+  .menu{padding-block:clamp(28px,5vh,110px)}
+  .menu h2{font-size:clamp(2.2rem,min(6vw,7.5vh),4.6rem)}
+  .dish{padding-block:clamp(7px,1.5vh,20px)}
+  .dish p{font-size:clamp(.82rem,1.9vh,.95rem);margin-top:3px}
+  .menu .note{margin-top:clamp(8px,1.5vh,16px)}
+  .menu-foot{margin-top:clamp(10px,2vh,36px)}
+  .feature-art{max-width:min(480px,56vh)}
+  h2.big{font-size:clamp(4rem,min(12vw,20vh),9rem)}
+  .cards{margin-top:clamp(20px,4.5vh,50px)}
+  .card{padding:clamp(18px,3vh,28px)}
+  .reviews .btn{margin-top:clamp(14px,3vh,28px)!important}
+  address{margin:clamp(12px,2.4vh,24px) 0}
+  .hours li{padding-block:clamp(7px,1.4vh,11px)}
+  .map{aspect-ratio:auto;height:min(520px,66vh)}
+  .final{padding-block:clamp(48px,8vh,90px)}
+  .final h2{font-size:clamp(4rem,min(16vw,24vh),12rem)}
+}
 @media (max-width:860px){
   .grid-2,.match-in,.cards{grid-template-columns:1fr}
   .stats{grid-template-columns:repeat(2,1fr)}
